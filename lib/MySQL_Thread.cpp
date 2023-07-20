@@ -120,7 +120,7 @@ MARIADB_CHARSET_INFO * proxysql_find_charset_name(const char *name_) {
 	MARIADB_CHARSET_INFO *c = (MARIADB_CHARSET_INFO *)mariadb_compiled_charsets;
 	const char *name;
 	if (strcasecmp(name_,(const char *)"utf8mb3")==0) {
-		name = (const char *)"utf8";
+		name = (const char *)"utf8mb4";
 	} else {
 		name = name_;
 	}
@@ -139,7 +139,7 @@ MARIADB_CHARSET_INFO * proxysql_find_charset_collate_names(const char *csname_, 
 	const char *csname;
 	const char *collatename;
 	if (strcasecmp(csname_,(const char *)"utf8mb3")==0) {
-		csname = (const char *)"utf8";
+		csname = (const char *)"utf8mb4";
 	} else {
 		csname = csname_;
 	}
