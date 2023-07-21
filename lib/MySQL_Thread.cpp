@@ -147,6 +147,7 @@ MARIADB_CHARSET_INFO * proxysql_find_charset_collate_names(const char *csname_, 
 		memcpy(buf,(const char *)"utf8",4);
 		strcpy(buf+4,collatename_+7);
 		collatename = buf;
+		collatename = (const char *)"utf8mb4_0900_ai_ci";
 	} else {
 		collatename = collatename_;
 	}
