@@ -1132,13 +1132,13 @@ TODO: 'SQL_CHARACTER_SET_DATABASE' is a variable that shouldn't be set, or track
 	and that variables are in alphabetical order
 */
 mysql_variable_st mysql_tracked_variables[] {
-	{ SQL_CHARACTER_SET,         SETTING_CHARSET,    false, true,  false, false, (char *)"charset", (char *)"charset", (char *)"utf8" , true} , // should be before SQL_CHARACTER_SET_RESULTS
+	{ SQL_CHARACTER_SET,         SETTING_CHARSET,    false, true,  false, false, (char *)"charset", (char *)"charset", (char *)"utf8mb4" , true} , // should be before SQL_CHARACTER_SET_RESULTS
 	{ SQL_CHARACTER_ACTION,    session_status___NONE,false, false, false, false, (char *)"action", (char *)"action", (char *)"1" , false} ,
 	{ SQL_SET_NAMES,             SETTING_SET_NAMES,  false, false, false, false, (char *)"names", (char *)"names", (char *)"DEFAULT" , false} ,
-	{ SQL_CHARACTER_SET_RESULTS, SETTING_VARIABLE,   false, false, false, false, (char *)"character_set_results", (char *)"character_set_results", (char *)"utf8" , false} ,
-	{ SQL_CHARACTER_SET_CONNECTION, SETTING_VARIABLE, false, false, false, false, (char *)"character_set_connection", (char *)"character_set_connection", (char *)"utf8", false } ,
-	{ SQL_CHARACTER_SET_CLIENT,     SETTING_VARIABLE, false, false, false, false, (char *)"character_set_client", (char *)"character_set_client", (char *)"utf8" , false} ,
-	{ SQL_CHARACTER_SET_DATABASE,   SETTING_VARIABLE, false, false, false, false, (char *)"character_set_database", (char *)"character_set_database", (char *)"utf8" , false} ,
+	{ SQL_CHARACTER_SET_RESULTS, SETTING_VARIABLE,   false, false, false, false, (char *)"character_set_results", (char *)"character_set_results", (char *)"utf8mb4" , false} ,
+	{ SQL_CHARACTER_SET_CONNECTION, SETTING_VARIABLE, false, false, false, false, (char *)"character_set_connection", (char *)"character_set_connection", (char *)"utf8mb4", false } ,
+	{ SQL_CHARACTER_SET_CLIENT,     SETTING_VARIABLE, false, false, false, false, (char *)"character_set_client", (char *)"character_set_client", (char *)"utf8mb4" , false} ,
+	{ SQL_CHARACTER_SET_DATABASE,   SETTING_VARIABLE, false, false, false, false, (char *)"character_set_database", (char *)"character_set_database", (char *)"utf8mb4" , false} ,
 	{ SQL_COLLATION_CONNECTION, SETTING_VARIABLE,     true,  false, false, false, (char *)"collation_connection", (char *)"collation_connection", (char *)"utf8mb4_0900_ai_ci" , true} ,
 //    { SQL_NET_WRITE_TIMEOUT,    SETTING_VARIABLE,     false, false, true,  false, (char *)"net_write_timeout", (char *)"net_write_timeout", (char *)"60" , false} ,
 	{ SQL_NAME_LAST_LOW_WM,     SETTING_VARIABLE,     false, false, true,  false, (char *)"placeholder", (char *)"placeholder", (char *)"0" , false} , // this is just a placeholder to separate the previous index from the next block
