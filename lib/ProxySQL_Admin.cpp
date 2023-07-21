@@ -4472,7 +4472,7 @@ void admin_session_handler(MySQL_Session *sess, void *_pa, PtrSize_t *pkt) {
 		}
 		if (!strncmp("select @@collation_database", query_no_space, strlen("select @@collation_database"))) {
 			l_free(query_length,query);
-			query=l_strdup("SELECT Collation '@@collation_database' FROM mysql_collations WHERE Collation='utf8_general_ci' LIMIT 1");
+			query=l_strdup("SELECT Collation '@@collation_database' FROM mysql_collations WHERE Collation='utf8mb4_0900_ai_ci' LIMIT 1");
 			query_length=strlen(query)+1;
 			goto __run_query;
 		}

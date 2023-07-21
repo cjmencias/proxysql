@@ -702,7 +702,7 @@ void ClickHouse_Server_session_handler(MySQL_Session *sess, void *_pa, PtrSize_t
 			(pkt->size==(strlen("SELECT @@collation_server")+5) && strncasecmp((char *)"SELECT @@collation_server",(char *)pkt->ptr+5,pkt->size-5)==0)
 		) {
 				l_free(query_length,query);
-				query=l_strdup("SELECT 'utf8_general_ci' AS '@@collation_server'");
+				query=l_strdup("SELECT 'utf8mb4_0900_ai_ci' AS '@@collation_server'");
 				query_length=strlen(query)+1;
 				run_query_sqlite = true;
 				goto __run_query_sqlite;
@@ -794,7 +794,7 @@ void ClickHouse_Server_session_handler(MySQL_Session *sess, void *_pa, PtrSize_t
 				strncasecmp("SELECT DEFAULT_COLLATION_NAME FROM information_schema.SCHEMATA WHERE SC",query_no_space,strlen("SELECT DEFAULT_COLLATION_NAME FROM information_schema.SCHEMATA WHERE SC") == 0))
 		) {
 			l_free(query_length,query);
-			query=l_strdup("SELECT 'utf8_general_ci' AS DEFAULT_COLLATION_NAME");
+			query=l_strdup("SELECT 'utf8mb4_0900_ai_ci' AS DEFAULT_COLLATION_NAME");
 			query_length=strlen(query)+1;
             run_query_sqlite = true;
             goto __run_query_sqlite;
@@ -811,7 +811,7 @@ void ClickHouse_Server_session_handler(MySQL_Session *sess, void *_pa, PtrSize_t
 			)
 		) {
 			l_free(query_length,query);
-			query=l_strdup("SELECT name AS BIN_NAME, 'utf8_general_ci' AS DEFAULT_COLLATION_NAME, name AS SCHEMA_NAME FROM system.databases");
+			query=l_strdup("SELECT name AS BIN_NAME, 'utf8mb4_0900_ai_ci' AS DEFAULT_COLLATION_NAME, name AS SCHEMA_NAME FROM system.databases");
 			query_length=strlen(query)+1;
 			goto __run_query;
 		}
