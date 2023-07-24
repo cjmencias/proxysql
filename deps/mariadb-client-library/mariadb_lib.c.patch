@@ -138,9 +138,9 @@ index 8c2a99b..cf6114a 100644
 -    char buff[64];
 +    char buff[128];
 +    if (csname) { // default behavior
-+      snprintf(buff, 127, "SET NAMES %s", cs->csname);
++      snprintf(buff, 127, "SET NAMES utf8mb4");
 +    } else {
-+      snprintf(buff, 127, "SET NAMES %s COLLATE '%s'", cs->csname, cs->name);
++      snprintf(buff, 127, "SET NAMES utf8mb4 COLLATE 'utf8mb4_0900_ai_ci'");
 +    }
  
 -    snprintf(buff, 63, "SET NAMES %s", cs->csname);

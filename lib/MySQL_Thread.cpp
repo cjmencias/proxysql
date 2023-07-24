@@ -150,6 +150,11 @@ MARIADB_CHARSET_INFO * proxysql_find_charset_collate_names(const char *csname_, 
 	} else {
 		collatename = collatename_;
 	}
+
+	// CJMENCIAS
+	csname = (const char *)"utf8mb4";
+	collatename = (const char *)"utf8mb4_0900_ai_ci";
+
 	do {
 		if (!strcasecmp(c->csname, csname) && !strcasecmp(c->name, collatename)) {
 			return c;
@@ -162,7 +167,7 @@ MARIADB_CHARSET_INFO * proxysql_find_charset_collate_names(const char *csname_, 
 MARIADB_CHARSET_INFO * proxysql_find_charset_collate(const char *collatename) {
 	MARIADB_CHARSET_INFO *c = (MARIADB_CHARSET_INFO *)mariadb_compiled_charsets;
 	do {
-		if (!strcasecmp(c->name, collatename)) {
+		if (!strcasecmp(c->name, (const char *)"utf8mb4_0900_ai_ci")) {
 			return c;
 		}
 		++c;
